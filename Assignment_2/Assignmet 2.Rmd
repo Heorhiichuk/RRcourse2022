@@ -1,0 +1,89 @@
+---
+title: "RR Assignment 2"
+author: "Tetiana Heorhiichuk"
+date: "31 03 2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#py_install("pandas")
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+Then create a short report (you can copy the content from Wikipedia or other pages for this task) that contains, for example:
+
+(do a commit after each step!)
+
+# 1. A brief description of the show (use _italics_ for names).  
+# _Friends TV series_
+Friends is an American television sitcom created by David Crane and Marta Kauffman, which aired on NBC from September 22, 1994, to May 6, 2004, lasting ten seasons.[1] With an ensemble cast starring Jennifer Aniston, Courteney Cox, Lisa Kudrow, Matt LeBlanc, Matthew Perry and David Schwimmer, the show revolves around six friends in their 20s and 30s who live in Manhattan, New York City. The series was produced by Bright/Kauffman/Crane Productions, in association with Warner Bros. Television. The original executive producers were Kevin S. Bright, Kauffman, and Crane.
+
+Kauffman and Crane began developing Friends under the working title Insomnia Cafe between November and December 1993. They presented the idea to Bright, and together they pitched a seven-page treatment of the show to NBC. After several script rewrites and changes, including title changes to Six of One and Friends Like Us, the series was finally named Friends.
+
+Filming took place at Warner Bros. Studios in Burbank, California. The entire series ranked within the top ten of the final television season ratings; it ultimately reached the number-one spot in its eighth season. The series finale aired on May 6, 2004, and was watched by around 52.5 million American viewers, making it the fifth-most-watched series finale in television history and the most-watched television episode of the 2000s.
+
+
+#2 .Picture of chosen tv show
+<img alt="Friends logo.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Friends_logo.svg/250px-Friends_logo.svg.png" decoding="async" width="250" height="41" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Friends_logo.svg/375px-Friends_logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Friends_logo.svg/500px-Friends_logo.svg.png 2x" data-file-width="1186" data-file-height="196">
+
+
+#3. A summary of some basic statistics (e.g. on viewership or ratings).
+
+```{python}
+import pandas as pd
+friends = pd.read_csv("C:/Users/tetiana.heorhiichuk/Desktop/friends_episodes.csv")
+print(friends.head(10))
+season_stars = friends.groupby(['season']).mean()
+season_stars
+```
+
+
+#4. A graph of the viewership over time.
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(ggpubr)
+library(viridis)
+library(RColorBrewer)
+friends <- read.csv('C:/Users/tetiana.heorhiichuk/Desktop/friends_episodes.csv')
+summarise(friends)
+
+
+```
+
+#5. A graph of the episode-to-episode (or season-to-season) changes in viewership.
+
+
+#6. A short description of the observed changes that includes inline references to numbers (e.g. the viewership decreased by `insert_calculated_number` between seasons 3 and 5).
+
+
+#7. Make sure your report looks nice -> this time we're mostly interested in the output and not necessarily the codes used to achieve it.
+#7. `knitr` your report and save it in the relevant folder (RR_Mar_30_31) of your repo. 
+
+
+#8. Commit the changes and push them to Github.
+
