@@ -7,9 +7,11 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+#install.packages("reticulate")
+#install.packages("chron")
 library(reticulate)
 library(chron)
-#py_install("pandas")
+py_install("pandas")
 ```
 
 ---
@@ -179,7 +181,7 @@ flights = flights.dropna()
 library(ggplot2)
 ggplot(py$flights, aes(carrier, arr_delay)) + geom_point() + geom_jitter()
 
-cat("Example from: https://rstudio.github.io/reticulate/articles/r_markdown.html")
+#cat("Example from: https://rstudio.github.io/reticulate/articles/r_markdown.html"#)
 ```
 
 And a nice table alternative -> `kable` from the `knitr` package.
