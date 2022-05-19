@@ -1,0 +1,2 @@
+total 0
+-rw-rw-r-- 1 tetiana_heorhiichuk tetiana_heorhiichuk 0 May 19 15:19 test.txt
